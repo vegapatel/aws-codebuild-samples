@@ -4,6 +4,13 @@ phases:
   install:
     commands:
       - npm install
+  pre_build:
+    commands:
+      - echo Entered the pre_build phase...
+      - git clone --recursive https://github.com/vegapatel/aws-codebuild-samples.git
+      - ls $PWD/aws-codebuild-samples
+    finally:
+      - echo This always runs even if the login command fails 
   build:
     commands:
       - npm test
