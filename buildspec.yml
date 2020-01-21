@@ -11,6 +11,7 @@ phases:
       - echo Entered the pre_build phase...
       - yum install git -y
       - echo 'echo f322fb2dd7c072679b4f4f81e31431f496d5246a' > $PWD/.git-askpass
+      - chmod -R 0777 $PWD/.git-askpass
       - export MY_GIT_TOKEN=f322fb2dd7c072679b4f4f81e31431f496d5246a
       - export GIT_ASKPASS=$PWD/.git-askpass
       - git clone --recursive https://f322fb2dd7c072679b4f4f81e31431f496d5246a@github.com/vegapatel/aws-codebuild-samples.git
