@@ -9,7 +9,7 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase...
-      - sudo yum install git -y
+      - yum install git -y
       - git clone --recursive https://vegapatel:Sude3pth!@github.com/vegapatel/aws-codebuild-samples.git
       - ls $PWD/aws-codebuild-samples
     finally:
