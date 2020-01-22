@@ -9,15 +9,10 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase...
-      - yum install git -y
       - cd testproject && mkdir test && cd -
       - ls testproject
       - ls testproject/tests
-      - echo 'echo f322fb2dd7c072679b4f4f81e31431f496d5246a' > $PWD/.git-askpass
-      - chmod -R 0777 $PWD/.git-askpass
-      - export MY_GIT_TOKEN=f322fb2dd7c072679b4f4f81e31431f496d5246a
-      - export GIT_ASKPASS=$PWD/.git-askpass
-      - git clone https://f322fb2dd7c072679b4f4f81e31431f496d5246a@github.com/vegapatel/aws-codebuild-samples.git
+      - ls testproject/tests/test
     finally:
       - echo This always runs even if the login command fails 
   build:
